@@ -10,8 +10,10 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "@types/js-cookie": "^2.2.1",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0-beta.3",
     "@vue/babel-preset-jsx": "^1.0.0-beta.3",
+    "js-cookie": "^2.2.0",
     "vue": "^2.6.6",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^7.0.0",

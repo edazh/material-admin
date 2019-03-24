@@ -1,17 +1,11 @@
 import Vue, { VNode, CreateElement } from 'vue';
 import Component from 'vue-class-component';
-import { LoginForm } from './LoginForm';
-import { VApp } from 'vuetify/lib';
-@Component({
-    components: { 'v-app': VApp },
-})
+@Component
 export default class LoginPage extends Vue {
 
     private render(h: CreateElement): VNode {
         return (
-            <v-app>
-                <LoginForm></LoginForm>
-            </v-app>
+            <h1>我是首页</h1>
         );
     }
 }

@@ -1,13 +1,13 @@
 import Vue, { CreateElement, VNode } from 'vue';
 import '@/plugins/vuetify';
 import Component from 'vue-class-component';
-import LoginPage from '@/pages/login';
-import { VApp, VContent } from 'vuetify/lib';
+import { VApp } from 'vuetify/lib';
+import router from './plugins/router';
 
 Vue.config.productionTip = false;
 
 @Component({
-  components: { VApp, LoginPage },
+  components: { VApp },
 })
 export default class App extends Vue {
   private render(h: CreateElement): VNode {
@@ -21,9 +21,7 @@ export default class App extends Vue {
     };
 
     const children = [
-      h(VContent,
-        [h(LoginPage)],
-      ),
+      h('router-view'),
     ];
 
     return h(VApp, data, children);
@@ -31,5 +29,6 @@ export default class App extends Vue {
 }
 
 new Vue({
+  router,
   render: (h) => h(App),
 }).$mount('#app');
