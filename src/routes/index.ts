@@ -1,24 +1,23 @@
-import { RouteConfig } from 'vue-router';
 
-const inner: RouteConfig[] = [
-    {
-        path: '/index',
-        name: 'index',
-        meta: {auth: true},
-        component: () => import('../pages/index'),
-    },
-];
-
-const outer: RouteConfig[] = [
+const inner = [
     {
         path: '/',
         name: 'root',
-        redirect: { name: 'login' },
+        redirect: { name: 'index' },
     },
+    {
+        path: '/index',
+        name: 'index',
+        meta: { auth: true },
+        component: () => import('@/views/index'),
+    },
+];
+
+const outer = [
     {
         path: '/login',
         name: 'login',
-        component: () => import('../pages/login'),
+        component: () => import('@/views/login/Index.vue'),
     },
 ];
 

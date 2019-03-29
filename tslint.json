@@ -1,7 +1,8 @@
 {
   "defaultSeverity": "warning",
   "extends": [
-    "tslint:recommended"
+    "tslint:recommended",
+    "vuetify"
   ],
   "linterOptions": {
     "exclude": [
@@ -9,6 +10,7 @@
     ]
   },
   "rules": {
+    "semicolon":false,
     "quotemark": [true, "single"],
     "indent": [true, "spaces", 2],
     "interface-name": false,
