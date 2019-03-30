@@ -11,9 +11,9 @@ export default {
     if (window.runGenScene) {
       window.runGenScene()
     } else {
-      console.error("Scene not found")
+      console.error('Scene not found')
     }
-  }
+  },
 }
 </script>
 

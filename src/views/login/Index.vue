@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import BackLayer from "./BackLayer.vue"
+import BackLayer from "./components/BackLayer.vue"
 import LoginForm from "./LoginForm.vue"
 export default {
   components: { LoginForm, BackLayer }

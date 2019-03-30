@@ -1,7 +1,6 @@
 import Mock from 'mockjs'
+import './api/user'
 
-Mock.mock('/api/user/login')
-
-const ranBool = Mock.Random.boolean()
-
-console.log('ranBool',ranBool);
+Mock.setup({
+    timeout: '200-600',
+})

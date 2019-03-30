@@ -6,7 +6,7 @@
         <v-card-title primary-title>
           <v-icon large color="primary">account_circle</v-icon>
           <!-- <h3 class="headline">Login</h3> -->
-          <span class="title font-weight-bloder pl-1">Material Admin</span>
+          <span class="title font-weight-black pl-1">Material Admin</span>
         </v-card-title>
         <v-layout pa-4 align-space-around justify-space-around column fill-height>
           <v-text-field
@@ -30,8 +30,8 @@
         </v-layout>
         <v-card-actions>
           <v-layout pa-4 align-center justify-end fill-height>
-            <v-btn flat round color="primary">sign in</v-btn>
-            <v-btn round color="primary">Login</v-btn>
+            <v-btn flat round color="primary">sign up</v-btn>
+            <v-btn round color="primary" @click="login">Login</v-btn>
           </v-layout>
         </v-card-actions>
       </form>
@@ -40,19 +40,37 @@
 </template>
 
 <script lang="ts">
-export default {
-  data() {
-    return {
-      form: {
-        username: "",
-        password: ""
-      },
-      //是否显示密码
-      show: false
-    }
-  } // data end
+import Vue from 'vue'
+import Component from 'vue-class-component'
+
+import { login as submitLogin } from '@/api/login'
+
+import { mapState, mapActions } from 'vuex'
+
+interface User {
+  username: string
+  token: string
+  name: string
+}
+
+// @Component 修饰符注明了此类为一个 Vue 组件
+@Component({
+  computed: {
+    ...mapState('user', {
+      userInfo: 'info',
+    }),
+  },
+})
+export default class LoginForm extends Vue {
+  // 初始数据可以直接声明为实例的属性
+  // 是否显示密码
+  private show: boolean = false
+  private form: object = {
+    username: '',
+    password: '',
+  }
+  private async login() {
+    console.log()
+  }
 }
 </script>
-
-<style>
-</style>

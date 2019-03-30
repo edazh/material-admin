@@ -1,4 +1,5 @@
-
+import IndexPage from '@/views/index'
+import LoginPage from '@/views/login/Index.vue'
 const inner = [
     {
         path: '/',
@@ -9,16 +10,16 @@ const inner = [
         path: '/index',
         name: 'index',
         meta: { auth: true },
-        component: () => import('@/views/index'),
+        component: IndexPage,
     },
-];
+]
 
 const outer = [
     {
         path: '/login',
         name: 'login',
-        component: () => import('@/views/login/Index.vue'),
+        component: LoginPage,
     },
-];
+]
 
 export default [...inner, ...outer];
