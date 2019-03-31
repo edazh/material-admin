@@ -1,6 +1,4 @@
 import Mock from 'mockjs'
 import './api/user'
 
-Mock.setup({
-    timeout: '200-600',
-})
+Mock.setup({ timeout: '200-600' })

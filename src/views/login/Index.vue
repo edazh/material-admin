@@ -1,20 +1,27 @@
 <template>
-  <BackLayer>
+  <div>
+    <div id="backLayer"></div>
     <v-content>
       <v-container fluid fill-height>
         <v-layout align-center justify-center>
-          <LoginForm></LoginForm>
+          <LoginForm/>
         </v-layout>
       </v-container>
     </v-content>
-  </BackLayer>
+  </div>
 </template>
 
-<script lang="ts">
-import BackLayer from "./components/BackLayer.vue"
-import LoginForm from "./LoginForm.vue"
+<script>
+import LoginForm from './LoginForm'
 export default {
-  components: { LoginForm, BackLayer }
+  components: { LoginForm },
+  mounted() {
+    if (window.runGenScene) {
+      window.runGenScene()
+    } else {
+      console.error('Scene not found')
+    }
+  },
 }
 </script>
 
